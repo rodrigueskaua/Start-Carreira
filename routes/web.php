@@ -17,6 +17,10 @@ Route::get('/curriculo', function () {
   return view('curriculo');
 })->name('curriculo');
 
+Route::get('/vagas', function () {
+  return view('vagas');
+})->name('vagas');
+
 Route::get('/login', [LoginController::class, 'index'])->name('auth.login');
 
 Route::get('/auth/google', [GoogleAuthController::class, 'redirect'])->name('auth.google');

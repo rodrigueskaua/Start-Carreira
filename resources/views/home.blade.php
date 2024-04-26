@@ -9,7 +9,7 @@
         <h2 class="mb-5 opacity-25">Página inicial em Desenvolvimento</h2>
         <div class="mt-4">
           <a href="{{ route('curriculo') }}" class="btn btn-lg btn-primary">Página de Currículos</a>
-          <a href="" class="btn btn-lg btn-secondary">Página de Vagas</a>
+          <a href="{{ route('vagas') }}" class="btn btn-lg btn-secondary">Página de Vagas</a>
         </div>
       </div>
     </div>
