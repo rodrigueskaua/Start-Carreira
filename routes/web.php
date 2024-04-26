@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GoogleAuthController;
 
 Route::get('/', function () {
     return view('landing.welcome');
@@ -18,8 +19,10 @@ Route::get('/curriculo', function () {
 
 Route::get('/login', [LoginController::class, 'index'])->name('auth.login');
 
-Route::get('/register', [LoginController::class, 'create'])->name('login.register');
+Route::get('/auth/google', [GoogleAuthController::class, 'redirect'])->name('auth.google');
+Route::get('/auth/google/call-back', [GoogleAuthController::class, 'callbackGoogle']);
 
+Route::get('/register', [LoginController::class, 'create'])->name('login.register');
 Route::post('/user/create', [UserController::class, 'store'])->name('user.store');
 
 Route::post('/auth', [LoginController::class, 'auth'])->name('auth');
