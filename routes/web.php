@@ -19,6 +19,10 @@ Route::get('/register', function () {
   return view('auth.register');
 });
 
+Route::get('/curriculo', function () {
+  return view('curriculo');
+})->name('curriculo');
+
 Route::get('/login', [LoginController::class, 'index'])->name('auth.login');
 
 Route::post('/auth', [LoginController::class, 'auth'])->name('auth');
