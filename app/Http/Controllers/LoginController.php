@@ -29,6 +29,11 @@ class LoginController extends Controller
             return redirect()->back()->with('erro', 'Usuário ou senha inválido.');
         }
     }
+    
+    public function create()
+    {
+        return view('auth.register');
+    }
 
     public function logout(Request $request)
     {
